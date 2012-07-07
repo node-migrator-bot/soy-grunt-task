@@ -85,7 +85,7 @@ function testHelper(test, opt_paths, options, numAssertions, customAssertions) {
     grunt.helper('soy', inputPaths, options, function() {
       if (cancel) {
         clearTimeout(cancel);
-        test.ok(path.existsSync(expectedOut), 'Output js file should exist.');
+        test.ok(fs.existsSync(expectedOut), 'Output js file should exist.');
         var content = fs.readFileSync(expectedOut, 'utf8');
         test.ok(/Success!/.test(content), 'Output contains compiled template.');
 
